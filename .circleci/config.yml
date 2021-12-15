@@ -28,7 +28,7 @@ jobs:
     steps:
       - run:
           name: Run android debug build
-          command: ./android/gradlew clean
+          command: cd android; gradlew assembleDebug
 
 workflows:
   check-source-workflow:

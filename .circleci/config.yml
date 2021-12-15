@@ -21,17 +21,17 @@ jobs:
       - run:
           name: Run tests
           command: npm run test
-  buildAndroid:
+  build-android:
     working_directory: ~/repo
     docker:
       - image: circleci/node:10.16.3
     steps:
       - run:
           name: Run android debug build
-          command: cd android; gradlew assembleDebug
+          command: cd android
 
 workflows:
   check-source-workflow:
     jobs:
       - test
-      - buildAndroid
+      - build-android

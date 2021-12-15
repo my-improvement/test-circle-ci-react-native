@@ -28,7 +28,7 @@ jobs:
     steps:
       - run:
           name: Run android debug build
-          command: cd android
+          command: ls
 
 workflows:
   check-source-workflow:

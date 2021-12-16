@@ -46,5 +46,5 @@ workflows:
   check-source-workflow:
     jobs:
       - unit-test
-      - build-android
       - lint
+      - build-android

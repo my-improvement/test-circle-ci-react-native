@@ -22,11 +22,12 @@ jobs:
           name: Run tests
           command: npm run test
   build-android:
+    working_directory: ~/repo/android
     docker:
       - image: circleci/android:api-27-node8-alpha
     steps:
       - checkout
-      - run: ./android/gradlew assembleDebug
+      - run: ls -a
 
 workflows:
   check-source-workflow:

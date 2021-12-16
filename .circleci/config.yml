@@ -24,7 +24,7 @@ jobs:
   build-android:
     working_directory: ~/repo/android
     docker:
-      - image: circleci/android:api-29-node12-alpha
+      - image: circleci/android:api-29-node
     steps:
       - checkout
       - run:

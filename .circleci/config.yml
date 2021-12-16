@@ -27,7 +27,7 @@ jobs:
       - image: circleci/android:api-27-node8-alpha
     steps:
       - checkout
-      - run: ls -a
+      - run: cd android && ./gradlew assembleDebug
 
 workflows:
   check-source-workflow:

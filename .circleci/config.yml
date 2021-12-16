@@ -26,7 +26,7 @@ jobs:
       - image: circleci/android:api-27-node8-alpha
     steps:
       - checkout
-      - run: adb
+      - run: ls -a
 
 workflows:
   check-source-workflow:

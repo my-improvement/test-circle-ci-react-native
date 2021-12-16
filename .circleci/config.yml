@@ -55,13 +55,13 @@ jobs:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
+      - run:
+          name: Build Android Debug
+          command: cd android && ./gradlew assembleDebug
       - save_cache:
           key: android-build-{{ checksum "android/build.gradle" }}-{{ checksum  "android/app/build.gradle" }}
           paths:
             - ./android/.gradle
-      - run:
-          name: Build Android Debug
-          command: cd android && ./gradlew assembleDebug
 
 workflows:
   check-source-workflow:

@@ -22,7 +22,6 @@ jobs:
           name: Run tests
           command: npm run test
   build-android:
-    working_directory: ~/repo/android
     docker:
       - image: circleci/android:api-27-node8-alpha
     environment:
@@ -36,14 +35,14 @@ jobs:
           command: chmod +x gradlew
       - run:
           name: Download Dependencies
-          command: gradlew androidDependencies
+          command: ./gradlew androidDependencies
       - save_cache:
           paths:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Build prod release app
-          command: gradlew assembleDebug
+          command: ./gradlew assembleDebug
 
 workflows:
   check-source-workflow:

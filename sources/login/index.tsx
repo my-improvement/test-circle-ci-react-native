@@ -42,8 +42,6 @@ function Login() {
       >
         <Text style={styles.loginButtonText}>Login</Text>
       </TouchableOpacity>
-
-      
     </ScrollView>
   )
 }

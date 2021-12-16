@@ -1,5 +1,17 @@
 version: 2.1
 jobs:
+  build-ios:
+    macos:
+      xcode: 11.3.0
+    environment:
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: test
+    steps:
+      - checkout
+      - run: bundle install
+      - run:
+          name: macos
+          command: xcodebuild --help
   lint:
     working_directory: ~/repo
     docker:
@@ -59,3 +71,4 @@ workflows:
       - lint
       - unit-test
       - build-android
+      - build-ios

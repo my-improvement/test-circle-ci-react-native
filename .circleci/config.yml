@@ -30,8 +30,9 @@ jobs:
       - image: circleci/android:api-30-node
     steps:
       - checkout
-      - run:
+      - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
           name: Install Dependencies
           command: yarn
       - save_cache:

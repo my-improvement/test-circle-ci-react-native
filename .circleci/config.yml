@@ -47,6 +47,8 @@ jobs:
       - restore_cache:
           keys:
             - dependency-cache-{{ checksum "package-lock.json" }}
+      - restore_cache:
+          keys:
             - android-build-{{ checksum "android/gradle/wrapper/gradle-wrapper.properties" }}
       - run:
           name: Install NPM Dependencies

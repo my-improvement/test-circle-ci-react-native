@@ -23,7 +23,7 @@ jobs:
           command: npm run test
   build-android:
     docker:
-      - image: cimg/android:2021.08.1-node
+      - image: circleci/android:api-27-node8-alpha
     steps:
       - checkout
       - run: node --version

@@ -37,7 +37,7 @@ function Login() {
 
       <TouchableOpacity
         testID="login-button"
-        disabled={username.trim() === "" || passwerd.trim() === ""}
+        disabled={username.trim() == "" || passwerd.trim() == ""}
         style={styles.loginButtonContainer}
       >
         <Text style={styles.loginButtonText}>Login</Text>

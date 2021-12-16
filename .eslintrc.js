@@ -2,7 +2,8 @@ module.exports = {
   root: true,
   extends: "@react-native-community",
   rules: {
-    quotes: [1, "double"],
-    semi: [1, "never"],
+    quotes: [2, "double"],
+    semi: [2, "never"],
+    eqeqeq: [2, "always"],
   },
 }

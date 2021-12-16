@@ -47,7 +47,7 @@ jobs:
       - restore_cache:
           keys:
             - dependency-cache-{{ checksum "package-lock.json" }}
-            - android-build-{{ checksum "android/build.gradle" }}-{{ checksum  "android/app/build.gradle" }}
+            - android-build-{{ checksum "android/gradle/wrapper/gradle-wrapper.properties" }}
       - run:
           name: Install NPM Dependencies
           command: ./yarn.sh
@@ -59,7 +59,7 @@ jobs:
           name: Build Android Debug
           command: cd android && ./gradlew assembleDebug
       - save_cache:
-          key: android-build-{{ checksum "android/build.gradle" }}-{{ checksum  "android/app/build.gradle" }}
+          key: android-build-{{ checksum "android/gradle/wrapper/gradle-wrapper.properties" }}
           paths:
             - ./android/.gradle
 

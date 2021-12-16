@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  test:
+  lint-and-unit-test:
     working_directory: ~/repo
     docker:
       - image: circleci/node
@@ -19,9 +19,9 @@ jobs:
           name: Run tests
           command: npm run test
   build-android:
-    working_directory: ~/repo/android
+    working_directory: ~/repo
     docker:
-      - image: circleci/android:api-31-node
+      - image: circleci/android:api-30-node
     steps:
       - checkout
       - restore_cache:
@@ -38,5 +38,5 @@ jobs:
 workflows:
   check-source-workflow:
     jobs:
-      - test
+      - lint-and-unit-test
       - build-android

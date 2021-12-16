@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -d "../node_modules" ] 
+if [ -d "./node_modules" ] 
 then
     echo "Node modules exists" 
 else

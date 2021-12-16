@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  lint
+  lint:
     working_directory: ~/repo
     docker:
       - image: circleci/node

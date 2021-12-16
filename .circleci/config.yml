@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Install Dependencies
-          command: yarn
+          command: ./.circleci/yarn.sh
       - run:
           name: Run lint
           command: yarn lint
@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run:
           name: Install Dependencies
-          command: yarn
+          command: ./.circleci/yarn.sh
       - run:
           name: Run tests
           command: yarn test
@@ -34,7 +34,7 @@ jobs:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
           name: Install Dependencies
-          command: yarn
+          command: ./.circleci/yarn.sh
       - save_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:

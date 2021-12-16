@@ -3,7 +3,7 @@ jobs:
   test:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:14.8.2
+      - image: circleci/node
     steps:
       - checkout
       - run:

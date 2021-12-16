@@ -22,7 +22,7 @@ jobs:
           name: Run tests
           command: npm run test
   build-android:
-    working_directory: ~/MyApp/android
+    working_directory: ~/test-circle-ci-react-native/android
     docker:
       - image: circleci/android:api-27-node8-alpha
     environment:

@@ -6,9 +6,6 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run:
-          name: Update NPM
-          command: "sudo npm install -g npm@5"
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
@@ -24,12 +21,9 @@ jobs:
   build-android:
     working_directory: ~/repo/android
     docker:
-      - image: circleci/android:api-30-node
+      - image: circleci/android:api-31-node
     steps:
       - checkout
-      - run:
-          name: Update NPM
-          command: "sudo npm install -g npm@8"
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
